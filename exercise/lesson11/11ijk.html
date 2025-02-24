@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11ijk</title>
+  </head>
+  <body>
+    <script>
+      //11i
+      function addNum(array, num) {
+        let modArray = [];
+        for (let i = 0; i < array.length; i++) {
+          modArray.push(array[i] + num);
+        }
+        console.log(modArray);
+      }
+      addNum([1,2,3],2);
+      addNum([1,2,3],3);
+      addNum([-2,-1,0,99],2);
+
+      //11j
+      function addArrays(array1, array2) {
+        let modArray = [];
+        for (let i = 0; i < array1.length; i++) {
+          modArray.push(array1[i] + array2[i]);
+        }
+        console.log(modArray);
+      }
+      addArrays([1,1,2],[1,1,3]);
+      addArrays([1,2,3],[4,5,6]);
+
+      //11k
+      function countPositive(array) {
+        let num = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] > 0) {
+            num++;
+          }
+        }
+        console.log(num);
+      }
+      countPositive([1,-3,5]);
+      countPositive([-2,3,-5,7,10]);
+
+      ////11l
+      //I did this code but not working for number below 0 for min.
+      /*function minMax(array) {
+        let min = 0;
+        let max = 0;
+        for ( let i = 0; i < array.length; i++) {
+          if (array[i] < min) {
+            min = array[i];
+          } 
+          if (array[i] > max) {
+            max = array[i];
+          }
+        }
+        console.log(`min: ${min}, max: ${max}`);
+      }
+      minMax([1,-3,5]);
+      minMax([-2,3,-5,7,10]);
+      minMax([5]);*/
+
+      //Code from him
+      function minMax(array) {
+        const result = {
+          min: array[0],
+          max: array[0]
+        };
+        for (let i = 0; i < array.length; i++) {
+          if (array[i] < result.min) {
+            result.min = array[i];
+          }
+          if (array[i] > result.max) {
+            result.max = array[i];
+          }
+        }
+        return result;
+      }
+      console.log(minMax([1, -3, 5]));
+      console.log(minMax([-2, 3, -5, 7, 10]));
+      //console.log(minMax([1, 2, 5]));
+
+      //11m code from him
+      function minMax2(nums) {
+        const result = {
+          min: null,
+          max: null
+        };
+        for (let i = 0; i < nums.length; i++) {
+          const value = nums[i];
+          if (result.min === null || value < result.min) {
+            result.min = value;
+          }
+          if (result.max === null || value > result.max) {
+            result.max = value;
+          }
+        }
+        return result;
+      }
+      console.log(minMax2([1, -3, 5]));
+      console.log(minMax2([-2, 3, -5, 7, 10]));
+      console.log(minMax2([1, 2, 5]));
+      console.log(minMax2([]));
+      console.log(minMax2([3]));
+
+      //11n
+      function countWords(array) {
+        const result = {};
+        for (let i = 0; i < array.length; i++) {
+          const word = array[i];
+          if (!result[word]) {
+            result[word] = 1;
+          } else {
+            result[word]++;
+          }
+        }
+        return result;
+      }
+      console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+    </script>
+  </body>
+</html>

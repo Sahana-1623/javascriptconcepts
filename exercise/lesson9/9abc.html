@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>9abc</title>
+  </head>
+  <body>
+    <button onclick="
+      console.log(document.querySelector('button'));
+    ">9a</button>
+
+    <button onclick="
+      buttonName();
+    " class="js-nine-a">9b</button>
+
+    <br><br>
+    <button onclick="
+      document.querySelector('.js-choice')
+        .innerHTML = 'You chose: heads';
+    ">heads</button>
+    <button onclick="
+      document.querySelector('.js-choice')
+        .innerHTML = 'You chose: tails';
+    ">tails</button>
+    <p class="js-choice"></p>
+
+    <br><br>
+
+    <input placeholder="Name" class="js-input-element" onkeydown="
+      /*
+      if (event.key === 'Enter') {
+        let name = document.querySelector('.js-input-element').value;
+        document.querySelector('.js-display-name').innerHTML = `Your name is: ${name}`;
+      }
+      */
+      //nameKeydown(event);
+      if (event.key === 'Enter') {
+        enterName();
+      };
+    ">
+    <button onclick="
+      /*
+      let name = document.querySelector('.js-input-element').value;
+      document.querySelector('.js-display-name').innerHTML = `Your name is: ${name}`;
+      */
+      enterName();
+    " class="js-submit-button">Submit</button>
+    <p class="js-display-name"></p>
+
+    <script>
+      function buttonName () {
+        document.querySelector('.js-nine-a').innerHTML = `9b done!`;
+      };
+
+     /* function nameKeydown(event) {
+        if (event.key === 'Enter') {
+          enterName();
+        }
+      };*/
+      function enterName() {
+        const name = document.querySelector('.js-input-element').value;
+        document.querySelector('.js-display-name').innerHTML = `Your name is: ${name}`;
+      }
+    </script>
+  </body>
+</html>

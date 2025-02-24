@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>7abc</title>
+  </head>
+  <body>
+    <script>
+      function greet(name) {
+        //if (name === undefined) {
+        if (!name) {
+          console.log('Hi There!');
+        } else {
+          console.log(`hello ${name}!`);
+        }
+      }
+      greet('Sahana');
+      greet('Simon')
+      greet();
+
+      function convertToFahrenheit(celsius) {
+        //console.log(celsius * ( 9 / 5) + 32);
+        return (celsius *  9 / 5) + 32;
+      }
+      console.log(convertToFahrenheit(25));
+
+      function convertToCelcius(fahrenheit) {
+        //console.log((fahrenheit - 32 ) * ( 5 / 9));
+        return (fahrenheit - 32 ) *  5 / 9;
+      }
+      console.log(convertToCelcius(86));
+
+      function convertTemperature(temperature,unit) {
+        if (unit === 'C') {
+          //console.log(`${temperature * ( 9 / 5) + 32}F`);
+          const result = convertToFahrenheit(temperature);
+          return `${result}F`
+        } else if (unit === 'F') {
+          //console.log(`${(temperature - 32 ) * ( 5 / 9)}C`);
+          const result = convertToCelcius(temperature);
+          return `${result}C`
+        }
+      }
+      //convertTemperature(25,'C');
+      //convertTemperature(86,'F')
+
+      console.log(convertTemperature(25,'C'));
+      console.log(convertTemperature(86,'F'));
+    </script>
+  </body>
+</html>

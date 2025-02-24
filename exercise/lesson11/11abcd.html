@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11abc</title>
+  </head>
+  <body>
+    <script>
+      //11a
+      const nums = [10, 20, 30];
+      nums[2] = 99
+      console.log(nums);
+
+      //11b
+      function getLastValue(array) {
+        let lastNumber = 0;
+        for (let i = 0; i < array.length; i++) {
+          lastNumber = array[i];
+        }
+        console.log(lastNumber);
+      }
+      getLastValue([1,20,22,24,5]);
+      getLastValue(['hi','hello','good']);
+
+      //11c
+      function arraySwap(array) {
+        let swappedArray = [];
+        /*for(i = array.length - 1; i >= 0; i--) {
+          let num = array[i];
+          swappedArray.push(num);
+        }*/
+        swappedArray.push(array[array.length-1]);
+        for (let i = 1; i <= array.length-2; i++) {
+          let num = array[i];
+          swappedArray.push(num);
+      }
+        swappedArray.push(array[0]);
+        console.log(swappedArray);
+      }
+      arraySwap([1,20,22,24,5]);
+      arraySwap(['hi','hello','good']);
+
+      //11d
+      for (let i = 0; i <= 10; i++) {
+        if (i % 2 === 0) {
+          console.log(i);
+        }
+      };
+
+      //11e
+      for (let i = 5; i >= 0; i--) {
+        console.log(i);
+      };
+
+      //11f
+      let i = 0;
+      while (i <= 10) {
+        if (i % 2 === 0) {
+          console.log(i);
+        }
+        i++;
+      }
+      let j = 5;
+      while (j >= 0) {
+        console.log(j);
+        j--;
+      }
+
+      //11g
+      oldArray = [1,2,3];
+      let newArray = [];
+      for (let i = 0; i < oldArray.length; i++) {
+        newArray.push(oldArray[i] + 1);
+      }
+      console.log(newArray);
+
+      //11h
+      function addOne(array) {
+        let incArray = [];
+        for (let i = 0; i < array.length; i++) {
+          incArray.push(array[i] + 1);
+        }
+        console.log(incArray);
+      }
+      addOne([1,2,3]);
+      addOne([-2,-1,0,99]);
+    </script>
+  </body>
+</html>

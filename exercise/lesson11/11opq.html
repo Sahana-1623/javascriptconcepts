@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11opq</title>
+  </head>
+  <body>
+    <script>
+      //11o
+      //arrayOfStrings = ['hello', 'world', 'search', 'good'];
+      /*arrayOfStrings = ['not', 'found'];
+      let count = -1;
+      for (let i = 0; i < arrayOfStrings.length; i++) {
+        if (arrayOfStrings[i] === 'search') {
+          count = i;
+        }
+      }
+      console.log(count);
+
+      //11p
+      arrayOfStrings = ['hello', 'world', 'search', 'good','search'];
+      let count1 = -1;
+      for (let i = 0; i < arrayOfStrings.length; i++) {
+        if (arrayOfStrings[i] === 'search') {
+          count1 = i;
+          break; 
+        }
+      }
+      console.log(count1);*/
+
+      //11q
+      function findIndex(array, word) {
+        //index = -1;
+        for (let i = 0; i < array.length; i++)  {
+          if (array[i] === word) {
+            //index = i;
+            //break;
+            return i;
+          } 
+        }
+        //return index;
+        return -1;
+      }
+      console.log(findIndex(['green','red','blue','red'], 'red'));
+      console.log(findIndex(['green','red','blue','red'], 'yellow'));
+
+      //11r
+      function removeEgg(array) {
+        let removedEgg = [];
+        for (let i = 0; i < array.length; i++){
+          //if (array[i] !== 'egg') {
+          if (array[i] === 'egg') {
+            //removedEgg.push(array[i])
+            continue;
+          }
+          removedEgg.push(array[i]);
+        }
+        return removedEgg;
+      }
+      console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+      //11s
+      function removeEgg1(array) {
+        let removedEgg = [];
+        let eggsRemoved = 0;
+        for (let i = 0; i < array.length; i++){
+          if (array[i] === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            continue;
+          }
+          removedEgg.push(array[i]);
+        }
+        return removedEgg;
+      }
+      console.log(removeEgg1(['egg','apple','egg','egg','ham']));
+
+      //11t doubt check with chatgpt
+        function removeEgg2(array) {
+          const reversedFood = array.reverse();
+          let removedEgg = [];
+          let eggsRemoved = 0;
+          for (let i = 0; i < reversedFood.length; i++)
+          {
+            if (array[i] === 'egg' && eggsRemoved < 2) //why array whynot reverseFood
+            {
+              eggsRemoved++;
+              continue;
+            }
+            removedEgg.push(array[i]);
+          }
+          return removedEgg.reverse();
+      }
+      console.log(removeEgg2(['egg','apple','egg','egg','ham']));
+
+      //11u
+      function removeEgg(foods) {
+        const foodsCopy = foods.slice();
+        const reversedFoods = foodsCopy.reverse();
+        const result = [];
+        let eggsRemoved = 0;
+        for (let i = 0; i < reversedFoods.length; i++) {
+          if (foods[i] === 'egg' && eggsRemoved < 2) {
+            eggsRemoved++;
+            continue;
+          }
+          result.push(foods[i]);
+        }
+        return result.reverse();
+      }
+
+      const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+      console.log(removeEgg(foods));
+      console.log(foods);
+
+      //11v he used For
+      let i = 1;
+      while (i <= 20) {
+        if ( i % 3 == 0 && i % 5 == 0) {
+          console.log('FizzBuzz');
+        } else if ( i % 3 == 0) {
+          console.log('Fizz');
+        } else if ( i % 5 == 0) {
+          console.log('Buzz');
+        } else {
+          console.log (i)
+        }
+        i++;
+      }
+
+      //11w
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i++)  {
+          if (array[i] === word) {
+            return i;
+          } 
+        }
+        return -1;
+      }
+
+      function unique(array) {
+        const result = [];
+
+        for (let i = 0; i < array.length; i++) {
+          const word = array[i];
+          if (findIndex(result, word) === -1) {
+            result.push(word);
+          }
+        }
+        return result;
+      }
+      console.log(unique(['green', 'red', 'blue', 'red']));
+      console.log(unique(['red', 'green', 'green', 'red']));
+
+    </script>
+  </body>
+</html>

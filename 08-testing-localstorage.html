@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testing Local Storage</title>
+  </head>
+   <body>
+    <button onclick="
+      function1();
+    ">click</button>
+
+    <button onclick="
+      function5();
+    ">Bad button</button>
+
+    <script>
+      console.log('function1');
+      const count = JSON.parse(localStorage.getItem('counting'));
+      console.log(JSON.parse(localStorage.getItem('counting')));
+
+      function function1() {
+        count.num1 += 1;
+        localStorage.setItem('counting',JSON.stringify(count));
+        alert(`Dont Click ${count.num1}`);
+      };
+
+      console.log('function5');
+      //const count5 = JSON.parse(localStorage.getItem('counting5')); o/p: null
+      //console.log(JSON.parse(localStorage.getItem('counting5')));
+      
+      //Fix from chatgpt
+      let count5 = JSON.parse(localStorage.getItem('counting5')) || { num5: 0 };
+      console.log(count5);
+      
+      function function5() {
+        count5.num5 += 1;
+        localStorage.setItem('counting5',JSON.stringify(count5));
+        alert(`Dont Click ${count5.num5}`);
+      };
+    </script>
+   </body>
+</html>

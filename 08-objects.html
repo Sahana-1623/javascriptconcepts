@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      /*const product = {
+        name: 'socks',
+        price: 1090
+      };
+      console.log(product);
+      console.log(typeof product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'cotton socks';
+      console.log(product);
+
+      product.newProperty = true;
+      console.log(product);
+
+      delete product.newProperty;
+      console.log(product);*/
+      /*
+      const product2 = {
+        name: 'shirt',
+        'delivery-time': '1 day',  //['delivery-time'] same
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function function1 () {
+          console.log('function inside object i.e., method');
+        }
+      };
+
+      console.log(product2);
+      console.log(product2.name);
+      console.log(product2['name']);
+      //console.log(product2.delivery-time);      cause error
+      console.log(product2['delivery-time']);
+
+      console.log(product2.rating);
+      console.log(product2.rating.count);
+
+      product2.fun();
+      //console.log(product2.fun);   outputting information about the function to the console
+      //console.log(product2.fun()); two o/p cz product2.fun() is called, which logs 'function inside object i.e., method' to the console. The function itself doesn't return anything, or it implicitly returns undefined. So, after the function execution, console.log prints the result of the function call, which is undefined.
+      //console.log(console);
+
+      console.log(typeof console);
+      console.log(typeof console.log);
+
+      //JS -> JSON
+      console.log(JSON.stringify(product2));  // "", no function
+      //JSON -> JS
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+      */
+
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+
+      const object1 = {
+        message: 'hello'
+      };
+      const object2 = object1;  //not copy of object... it is copy of reference i.e., copy by reference
+      
+      object1.message = 'Good job!';  //const prevent us changing the reference in the variable but it doesnt prevent us reaching into the reference and chaning the object that is pointing to.
+      console.log(object1);
+      console.log(object2);
+
+      //we cant compare objects directly cz they are just references
+      const object3 = {
+        message: 'Good job!'
+      }
+      console.log(object3 === object1); //diff reference tho same message
+      console.log(object1 === object2); //same reference
+      console.log(object3.message === object1.message);
+
+      const object4 = {
+        message: 'Good job!',
+        price: 799
+      }
+      //to save the below in variable also called message
+      /*const message = object4.message;
+      //if veriable and property name are same we can actually write it like below shortcut
+      const { message } = object4; //this is called destructuting
+      console.log(message);*/
+
+      const { message, price } = object4;
+      console.log(message);
+      console.log(price);
+
+      //shorthand property
+      const object5 = {
+        //message: message
+        //if property and variable name are same we can just write once... it is called shorthand property
+        message,
+        /*method: function function1() {
+          console.log('method');
+        }*/
+        //shorthand method i.e., no need function name
+        method() {
+          console.log('method');
+        }
+      };
+      console.log(object5);
+
+      object5.method();   
+
+
+    </script>
+  </body>
+</html>

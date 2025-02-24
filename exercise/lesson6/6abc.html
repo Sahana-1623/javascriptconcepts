@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>6abc</title>
+  </head>
+  <body>
+    <script>
+      const hour = 19;
+      const name = 'Sahana'
+      if (hour >= 6 && hour <= 12) {
+        console.log(`Good morning ${name}!`);
+      } else if (hour >= 13 && hour <= 17) {
+        console.log(`Good afternoon ${name}!`);
+      } else {
+        console.log(`Good night ${name}!`);
+      }
+
+      const age = 27;
+      if (age <= 6 || age >= 65) {
+        console.log('Discount');
+      } else {
+        console.log('No discount');
+      }
+
+      const age1 = 5;
+      const isHoliday = false;
+      if (!isHoliday && (age1 <= 6 || age1 >= 65)) {
+        console.log('Discount');
+      } else {
+        console.log('No discount');
+      }
+    </script>
+  </body>
+</html>

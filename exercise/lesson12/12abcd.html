@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>12abcd</title>
+  </head>
+  <body>
+    <button class="js-finish-button">Start</button>
+
+    <br><br>
+    <button class="js-addtocart-button">Add to Cart</button>
+    <p class="js-added-text"></p>
+
+    <br><br>
+    <button class="js-add-button">Add</button>
+    <button class="js-remove-button">Remove</button>
+    <script>
+      //12a
+      const add = function() {
+        console.log(2+3);
+      };
+      add();
+      add();
+
+      //12b
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+      runTwice(function() {
+        console.log('12b')
+      });
+      runTwice(add);
+
+      //12c
+      /*function changeText() {
+        const button = document.querySelector('.js-finish-button');
+        button.innerHTML = `Loading...`; //12d
+        setTimeout(() => {
+        button.innerHTML = `Finished!`;
+        }, 1000);
+      }*/
+      const changeText = () => {
+        const button = document.querySelector('.js-finish-button');
+        button.innerHTML = `Loading...`; //12d
+        setTimeout(() => {
+        button.innerHTML = `Finished!`;
+        }, 1000);
+      }
+      document.querySelector('.js-finish-button')
+        .addEventListener('click', changeText);
+
+      //12e
+      /*let timeoutId;
+
+      function addBelow() {
+        const text = document.querySelector('.js-added-text');
+        text.innerHTML = `Added`;
+
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(() => {
+          text.innerHTML=``;
+          isAdded = true;
+          }, 2000);
+      }*/
+
+      let timeoutId;
+      document.querySelector('.js-addtocart-button')
+        .addEventListener('click', () => {
+          const text = document.querySelector('.js-added-text');
+          text.innerHTML = `Added`;
+
+          clearTimeout(timeoutId);
+
+          timeoutId = setTimeout(() => {
+            text.innerHTML=``;
+            isAdded = true;
+          }, 2000);
+        });
+
+      //12g
+      /*
+      setInterval(function() {
+        if (document.title === '12abcd') {
+          document.title = `(2) New messages`;
+        } else {
+          document.title = '12abcd';
+        }
+      }, 1000);
+      */
+
+      //12h
+      let messages = 2;
+      /*
+      function addMessage() {
+        messages++;
+        displayNotification();
+      }
+
+      function removeMessage() {
+        if (messages > 0) {
+          messages--;
+          if (messages === 0) {
+            stopNotification();
+          }
+        }
+      }*/
+
+      document.querySelector('.js-add-button')
+        .addEventListener('click', () => {
+          messages++;
+          displayNotification();
+        })
+      
+      document.querySelector('.js-remove-button')
+        .addEventListener('click', () => {
+          if (messages > 0) {
+            messages--;
+            if (messages === 0) {
+              stopNotification();
+            }
+          }
+        })
+
+      let intervalId;
+      let isDisplayNotification;
+      displayNotification()
+
+      function displayNotification() {
+        if (isDisplayNotification) {
+          return;
+        }
+      
+        isDisplayNotification = true;
+
+        intervalId = setInterval(() => {
+          if (document.title === '12abcd') {
+            document.title = `(${messages}) New messages`;
+          } else {
+            document.title = '12abcd';
+          }
+        }, 1000);
+      }
+
+      function stopNotification() {
+        isDisplayNotification = false;
+        clearInterval(intervalId);
+        document.title = '12abcd';
+      }
+
+    </script>
+  </body>
+</html>

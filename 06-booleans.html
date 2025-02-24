@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>booleans</title>
+  </head>
+  <body>
+    <script>
+      /*
+      true
+      false
+
+      console.log(3 > 5 - 5);
+
+      console.log(5 === '5.00');
+
+      if (false) {
+        console.log('hello');
+      } else {
+        console.log('else');
+      }
+
+      const age = 15;
+
+      if (age >= 16) {
+        console.log('You can drive');
+      } else if (age >= 14) {
+        console.log('Almost there!');
+      } else {
+        console.log('You cannot drive');
+      }
+
+      console.log(true && false);
+      console.log(0.2 >= 0 && 0.2 < 1 / 3);
+
+      console.log(true || false);
+      console.log(!true)
+
+      if (0) {
+        console.log('truthy');          // 0 is falsy other numbers are truthy
+      }
+
+      const cartQuantity = 5;           // = 0
+      if (cartQuantity) {
+        console.log('Cart has product');
+      }
+
+      console.log(!0);
+
+      console.log('text' / 5);          // o/p: NaN
+
+      let variable1;                     // only for let, for const, const var1 = undefined;
+      console.log(variable1);           // o/p: undefined
+      */
+
+      const result = true ? 'truthy' : 'falsy';     // result = 0 => falsy
+      console.log(result);                          //o/p: truthy
+
+
+      false && console.log('hello');                // left side block the code on right
+
+      const message = 5 && 'hello';                 // message = false && 'hello' => false
+      console.log(message);                         // o/p: hello
+
+
+      const currency = 'EUR' || 'USD';              // currency = undefined || USD => USD
+      console.log(currency);                        // o/p: EUR
+    </script>
+  </body>
+</html>
